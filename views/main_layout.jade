@@ -1,0 +1,29 @@
+doctype html
+html
+	head
+		title= 'learnlabs'
+		link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+	body
+		nav(class='navbar navbar-default')
+			div(class='container-fluid')
+				div(class='navbar-header')
+					button(type='button', class='navbar-toggle collapsed',data-toggle='collapse',data-target='#bs-example-navbar-collapse-1')
+						span(class='sr-only')
+						span(class='icon-bar')
+						span(class='icon-bar')
+						span(class='icon-bar')
+					a(class='navbar-brand', href='#') Learn labs | Blog Manager
+				div(class='collapse navbar-collapse' id='bs-example-navbar-collapse-1')
+					ul(class='nav navbar-nav navbar-right')
+						li
+							a(href="/blog/add_blog")="Add Post"
+						li
+							a(href="/blog/blog_home")="Blog Posts"
+						li
+							a(href="/users/logout")="Logout"
+		block content
+
+		
+		
+		script(src="/javascripts/jquery.min.js")
+		script(src='/javascripts/bootstrap.js')

@@ -1,0 +1,18 @@
+extends main_layout
+
+block content
+	div(class='container')
+		h2 Write new post
+		hr
+		form(action='/blog/add_post' method='post')
+			div(class='row')
+				div(class='col-lg-5')
+					label Post title
+					input(type="text", name="blog_title", placeholder="Enter post title" class='form-control')
+					br
+					label Post Content
+					textarea(name="blog_body", placeholder="Enter post content" class='form-control')
+					
+					br
+					input(type='hidden', name='user_id', value='#{user._id}')
+					input(type="submit", text="Submit" class='btn btn-success')

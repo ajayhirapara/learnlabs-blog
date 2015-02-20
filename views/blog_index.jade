@@ -1,0 +1,17 @@
+extends temp_layout
+
+block content
+
+	div(class='container')
+		div(class='row')
+			div(class='col-lg-8 col-sm-offset-2')
+				br
+
+				each c in blog
+					section(class='about section')
+						div(class="section-inner")
+							h4 #{c.title}
+							small #{c.modified}
+							hr
+							p #{c.body}
+

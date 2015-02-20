@@ -1,0 +1,18 @@
+extends main_layout
+
+block content
+	div(class='container')
+		h2 Update Blog Post
+		hr
+		form(action='/blog/edit_post' method='post')
+			div(class='row')
+				div(class='col-lg-4')
+					label Post title
+					input(type="text", name="blog_title", placeholder="Enter post title" class='form-control', value='#{blog.title}')
+					br
+					label Post body
+					textarea(name="blog_body", placeholder="Enter post content" class='form-control') #{blog.body}
+					br
+					input(type='hidden', name='user_id', value='#{user._id}')
+					input(type='hidden', name='_id', value='#{blog._id}')
+					input(type="submit", text="Submit" class='btn btn-success')

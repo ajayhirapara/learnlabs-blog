@@ -1,0 +1,49 @@
+doctype html
+html
+	head
+		title= 'Learn labs'
+		link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/font-awesome/css/font-awesome.css')
+		link(href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css')
+		link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css')
+	body
+		header(class="header")
+			div(class="container")
+				img(class="profile-image img-responsive pull-left" src="/images/lgbig.png"  alt="Logo" style='height:150px')
+				ul(class='top-bar')
+					li
+						a(href='/',class='m-link')
+							i(class='fa fa-home') &nbsp;Home 
+					li
+						a(href='/blog/blog_index',class='m-link')
+							i(class='fa fa-list') &nbsp;Blog
+					li
+						a(href='',class='m-link' data-toggle="modal" data-target="#loginModal")
+							i(class='fa fa-sign-in') &nbsp;Login/ Register
+					li
+						a(href='',class='m-link') 
+							i(class='fa fa-envelope') &nbsp;Contact Us
+
+		div(class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+			div(class="modal-dialog")
+				div(class="modal-content")
+					div(class="modal-header")
+						button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+							span(aria-hidden="true")&times;
+						h4(class="modal-title" id="exampleModalLabel") Login / Register
+					div(class="modal-body")
+						form(action='/users/login',method='post')
+							label='Username'
+							input(type='email',name='username', class='form-control', placeholder='Enter registered email address')
+							br
+							label='Password'
+							input(type='password',name='password',class='form-control',placeholder='Your password')
+							br
+							input(type='submit',class='btn btn-primary', value='Login')
+					div(class="modal-footer")
+						button(type="button" class="btn btn-default" data-dismiss="modal") Close
+		block content
+
+		script(src="/javascripts/jquery.min.js")
+		script(src='/javascripts/bootstrap.js')

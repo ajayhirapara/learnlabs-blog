@@ -1,0 +1,18 @@
+extends main_layout
+
+block content
+
+	div(class='container')
+		Your Blog Posts
+		hr
+		each c in blog
+			div(class='well')
+				h4 #{c.title}
+				small #{c.modified}
+				hr
+				p #{c.body}
+				hr
+				a(href='/blog/edit_blog/#{c._id}' class='btn btn-xs btn-info') Edit
+				&nbsp;&nbsp;&nbsp;
+				a(href='/blog/delete/#{c._id}' class='btn btn-xs btn-danger') Delete
+
