@@ -20,7 +20,7 @@ var blog = require('./routes/blog');
 var app = express();
 
 // view engine setup
-app.set('port',4000);
+app.set('port',80);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
